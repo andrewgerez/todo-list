@@ -1,3 +1,4 @@
+import { TaskItem } from '../TaskItem';
 import * as S from './styles';
 
 export const TaskList = () => {
@@ -15,15 +16,11 @@ export const TaskList = () => {
         </div>
       </S.TaskListHeader>
 
-      <S.TaskList>
-        <div>teste</div>
-
-        <div>teste</div>
-
-        <div>teste</div>
-
-        <div>teste</div>
-      </S.TaskList>
+      <TaskItem />
+      <TaskItem />
+      <TaskItem />
+      <TaskItem />
+      <TaskItem />
     </S.TaskListContainer>
   );
 }
