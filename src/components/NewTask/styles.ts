@@ -7,5 +7,5 @@ export const NewTaskContainer = styled.div`
   width: 100%;
   gap: 0.5rem;
 
-  margin-top: -1.6875rem;
+  margin: -1.6875rem 0 4rem 0;
 `;

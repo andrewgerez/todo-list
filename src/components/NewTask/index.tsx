@@ -12,5 +12,5 @@ export const NewTask = () => {
         <PlusCircle width={16} height={16} />
       </Button>
     </S.NewTaskContainer>
-  )
+  );
 }

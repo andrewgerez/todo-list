@@ -6,5 +6,5 @@ export const Header = () => {
     <S.HeaderContainer>
       <img src={Logo} alt="" />
     </S.HeaderContainer>
-  )
+  );
 }
