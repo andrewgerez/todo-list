@@ -1,12 +1,23 @@
 import * as S from './styles';
 import { Trash } from 'phosphor-react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useStore } from '../../store';
 
 interface ITaskItem {
+  id: string;
   content: string;
 }
-export const TaskItem = ({ content }: ITaskItem) => {
+export const TaskItem = ({ id, content }: ITaskItem) => {
+  const { completeTask, resetTask, deleteTask } = useStore();
   const [ taskCompleted, setTaskCompleted ] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (taskCompleted) {
+      completeTask(id);
+    } else {
+      resetTask(id);
+    }
+  }, [completeTask, resetTask, taskCompleted, id]);
 
   return (
     <S.TaskItemContainer>

@@ -3,22 +3,16 @@ import { Button } from '../Button';
 import { TaskItem } from '../TaskItem';
 import * as S from './styles';
 import { useState } from 'react';
-import { v4 as uuid } from 'uuid';
-
-interface Task {
-  content: string;
-  completed: boolean;
-}
-
+import { useStore } from '../../store';
 export const TaskList = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const { tasks, addTask } = useStore();
   const [newTask, setNewTask] = useState<string>('');
   const completedTasks = tasks.filter((task) => task.completed === true).length;
 
   const handleCreateNewTask = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
 
-    setTasks([...tasks, { content: newTask, completed: false }]);
+    addTask(newTask);
     setNewTask('');
   }
 
@@ -26,12 +20,6 @@ export const TaskList = () => {
     e.target.setCustomValidity('');
     setNewTask(e.currentTarget.value);
   }
-
-  // const handleCompleteTask = (index: number, completed: boolean) => {
-  //   const updateTasks = [...tasks];
-  //   updateTasks[index].completed = completed;
-  //   setTasks(updateTasks);
-  // }
 
   return (
     <S.TaskListContainer>
@@ -63,7 +51,11 @@ export const TaskList = () => {
       </S.TaskListHeader>
 
       {tasks.map((task) => (
-        <TaskItem key={uuid()} content={task.content} />
+        <TaskItem 
+          key={task.id}
+          id={task.id}
+          content={task.content} 
+        />
       ))}
     </S.TaskListContainer>
   );
