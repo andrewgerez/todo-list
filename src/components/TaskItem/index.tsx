@@ -2,14 +2,17 @@ import * as S from './styles';
 import { Trash } from 'phosphor-react'
 import { useState } from 'react';
 
-export const TaskItem = () => {
+interface ITaskItem {
+  content: string;
+}
+export const TaskItem = ({ content }: ITaskItem) => {
   const [ taskCompleted, setTaskCompleted ] = useState<boolean>(false);
 
   return (
     <S.TaskItemContainer>
       <S.CheckboxTask onCheckedChange={(checked: boolean) => setTaskCompleted(checked)} />
       <S.TaskContent completed={taskCompleted.toString()}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis omnis dolorem eligendi commodi quae
+        {content}
       </S.TaskContent>
 
       <S.DeleteButton>

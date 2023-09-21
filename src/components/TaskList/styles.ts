@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const TaskListContainer = styled.div`
   display: flex;
@@ -7,6 +7,28 @@ export const TaskListContainer = styled.div`
   gap: 1.5rem;
 
   width: 46rem;
+`;
+
+export const NewTaskForm = styled.form`
+  display: flex;
+  gap: 0.5rem;
+
+  margin: -1.6875rem 0 4rem 0;
+
+  input {
+    width: 39.875rem;
+    height: 3.375rem;
+    padding: 1rem 0 1rem 1rem;
+
+    background-color: ${(props) => props.theme["gray-500"]};
+    border: 1px solid ${(props) => props.theme["gray-500"]};
+    border-radius: 8px;
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 1px ${(props) => props.theme["purple-700"]};
+    }
+  }
 `;
 
 export const TaskListHeader = styled.header`
@@ -32,17 +54,16 @@ export const TaskListHeader = styled.header`
 `;
 
 interface TaskCounterVariants {
-  variant: 'created' | 'done';
+  variant: "created" | "done";
 }
 
 export const TaskCounter = styled.p<TaskCounterVariants>`
   font-weight: bold;
   font-size: 0.875rem;
-  color: ${(props) => 
-    props.variant === "created" 
-      ? props.theme["blue-500"] 
-      : props.theme["purple-500"]
-  };
+  color: ${(props) =>
+    props.variant === "created"
+      ? props.theme["blue-500"]
+      : props.theme["purple-500"]};
 `;
 
 export const TaskList = styled.main`
