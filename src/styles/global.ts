@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -8,14 +8,22 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme['gray-600']};
+    background: ${(props) => props.theme["gray-600"]};
     -webkitfont-smoothing: antialiased;
   }
 
   body, input, textarea, button {
     font-family: 'Inter', sans-serif;
-    color: ${(props) => props.theme['gray-100']};
+    color: ${(props) => props.theme["gray-100"]};
     font-size: 0.875rem;
     line-height: 1.4;
   }
-`
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme["gray-300"]};
+  }
+`;
