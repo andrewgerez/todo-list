@@ -18,6 +18,10 @@ export const Button = styled.button`
     cursor: pointer;
   }
 
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   svg {
     color: ${(props) => props.theme["gray-100"]};
   }

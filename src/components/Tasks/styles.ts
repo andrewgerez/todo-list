@@ -4,16 +4,16 @@ export const TaskListContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1.5rem;
 
   width: 46rem;
+  gap: 4rem;
 `;
 
 export const NewTaskForm = styled.form`
   display: flex;
   gap: 0.5rem;
 
-  margin: -1.6875rem 0 4rem 0;
+  margin: -1.6875rem 0 0 0;
 
   input {
     width: 39.875rem;
@@ -32,12 +32,22 @@ export const NewTaskForm = styled.form`
   }
 `;
 
+export const TaskList = styled.main`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+`;
+
 export const TaskListHeader = styled.header`
   width: 100%;
   height: 1.1875rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0.75rem;
 
   div {
     display: flex;
@@ -65,12 +75,4 @@ export const TaskCounter = styled.p<TaskCounterVariants>`
     props.variant === "created"
       ? props.theme["blue-500"]
       : props.theme["purple-500"]};
-`;
-
-export const TaskList = styled.main`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.75rem;
 `;
