@@ -26,7 +26,7 @@ export const TaskItem = ({ id, content }: ITaskItem) => {
         {content}
       </S.TaskContent>
 
-      <S.DeleteButton>
+      <S.DeleteButton onClick={() => deleteTask(id)}>
         <Trash width={14} height={14} />
       </S.DeleteButton>
     </S.TaskItemContainer>

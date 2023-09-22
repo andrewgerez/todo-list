@@ -11,6 +11,8 @@ export const TaskItemContainer = styled.div`
   border-radius: 8px;
 
   background-color: ${(props) => props.theme["gray-500"]};
+  border: 1px solid ${(props) => props.theme["gray-400"]};
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.06);
 `;
 
 export const CheckboxTask = styled(Checkbox)`
@@ -55,9 +57,18 @@ export const TaskContent = styled.p<ITaskContent>`
 
 export const DeleteButton = styled.button`
   all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
+  border-radius: 0.25rem;
 
   color: ${(props) => props.theme["gray-300"]};
+
+  &:hover {
+    background-color: ${(props) => props.theme["gray-400"]};
+    color: ${(props) => props.theme["red"]};
+  }
 `;

@@ -18,15 +18,16 @@ export const NewTaskForm = styled.form`
   input {
     width: 39.875rem;
     height: 3.375rem;
-    padding: 1rem 0 1rem 1rem;
+    padding: 0 1rem;
 
     background-color: ${(props) => props.theme["gray-500"]};
-    border: 1px solid ${(props) => props.theme["gray-500"]};
+    border: 1px solid ${(props) => props.theme["gray-700"]};
     border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 1px ${(props) => props.theme["purple-700"]};
+      border-color: ${(props) => props.theme["purple-700"]};
     }
   }
 `;
