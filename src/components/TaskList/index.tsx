@@ -50,11 +50,11 @@ export const TaskList = () => {
         </div>
       </S.TaskListHeader>
 
-      {tasks.map((task) => (
-        <TaskItem 
+      {tasks?.map((task) => (
+        <TaskItem
           key={task.id}
           id={task.id}
-          content={task.content} 
+          content={task.content}
         />
       ))}
     </S.TaskListContainer>
