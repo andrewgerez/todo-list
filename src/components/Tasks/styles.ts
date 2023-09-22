@@ -6,7 +6,12 @@ export const TaskListContainer = styled.div`
   flex-direction: column;
 
   width: 46rem;
+  height: 451px;
   gap: 4rem;
+
+  @media (max-width: 600px) {
+    width: 24rem;
+  }
 `;
 
 export const NewTaskForm = styled.form`
@@ -29,6 +34,10 @@ export const NewTaskForm = styled.form`
       outline: 0;
       border-color: ${(props) => props.theme["purple-700"]};
     }
+
+    @media (max-width: 600px) {
+      width: 16rem;
+    }
   }
 `;
 
@@ -39,6 +48,8 @@ export const TaskList = styled.main`
   justify-content: center;
   flex-direction: column;
   gap: 0.75rem;
+
+  padding-bottom: 1rem;
 `;
 
 export const TaskListHeader = styled.header`

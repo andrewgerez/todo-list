@@ -16,7 +16,7 @@ export const useStore = create<Store>((set) => {
           content: taskContent,
           completed: false,
         };
-        const updateTasks = [...state.tasks, newTask];
+        const updateTasks = [newTask, ...state.tasks];
         saveTasksInLocalStorage(updateTasks);
         return { tasks: updateTasks };
       }),

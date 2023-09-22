@@ -5,7 +5,7 @@ export const TaskItemContainer = styled.div`
   display: flex;
 
   width: 100%;
-  height: 4.5rem;
+  min-height: 4.5rem;
   padding: 1rem;
   gap: 0.75rem;
   border-radius: 8px;
@@ -52,7 +52,8 @@ export const TaskContent = styled.p<ITaskContent>`
       : props.theme["gray-100"]};
   text-decoration: ${(props) => (props.completed === "true" ? "line-through" : "")};
 
-  max-width: 39.5rem;
+  max-width: 632px;
+  word-wrap: break-word;
 `;
 
 export const DeleteButton = styled.button`
