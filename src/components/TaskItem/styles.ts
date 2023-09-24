@@ -50,9 +50,12 @@ export const TaskContent = styled.p<ITaskContent>`
     props.completed === "true"
       ? props.theme["gray-300"]
       : props.theme["gray-100"]};
-  text-decoration: ${(props) => (props.completed === "true" ? "line-through" : "")};
+  text-decoration: ${(props) => (props.completed === "true" 
+    ? "line-through" 
+    : "none"
+  )};
 
-  max-width: 632px;
+  width: 39.5rem;
   word-wrap: break-word;
 `;
 

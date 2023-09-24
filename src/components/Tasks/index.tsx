@@ -55,8 +55,7 @@ export const TaskList = () => {
         {tasks?.map((task) => (
           <TaskItem
             key={task.id}
-            id={task.id}
-            content={task.content}
+            task={task}
           />
         ))}
       </S.TaskList>
